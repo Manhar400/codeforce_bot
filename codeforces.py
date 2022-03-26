@@ -1,7 +1,7 @@
 import requests
 import json
 import time
-
+import telegram as tl
 
 def search_problems(rating, userlist, tags):
     user_data = []
@@ -58,9 +58,10 @@ def search_problems(rating, userlist, tags):
     return return_list
 
 # send_mess("******************************START**********************************")
-userlist = ['Manhar_11','bugabooset']
+userlist = ['Manhar_Bhardwaj','bugabooset']
 rating = [800,900,1000,1100,1200]
 
 lst = search_problems(rating, userlist, [])
 for i in lst:
-    print(i)
+    tl.send_message(i)
+    time.sleep(0.2)
